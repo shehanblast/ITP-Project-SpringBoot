@@ -1,5 +1,6 @@
 package com.in28minutes.rest.webservices.restfulwebservices.todo;
 
+import com.in28minutes.rest.webservices.restfulwebservices.Medicine.Medicine;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -27,6 +28,8 @@ public class TodoJpaResource {
         return todoJpaRepo.findByUsername(username);
     }
 
+
+
     @GetMapping("/jpa/users/{username}/todos/{id}")
     public Todo getTodo(@PathVariable String username,
                         @PathVariable Long id){
@@ -34,6 +37,8 @@ public class TodoJpaResource {
         return todoJpaRepo.findById(id).get();
 
     }
+
+
 
     @DeleteMapping("/jpa/users/{username}/todos/{id}")
     public ResponseEntity<Void> deleteTodo(@PathVariable String username,
@@ -76,6 +81,8 @@ public class TodoJpaResource {
         return ResponseEntity.created(uri).build();
 
     }
+
+
 
 
 }

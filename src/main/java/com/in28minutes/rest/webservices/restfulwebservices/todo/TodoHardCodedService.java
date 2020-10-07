@@ -12,11 +12,11 @@ public class TodoHardCodedService {
     private static List<Todo> todos = new ArrayList<>();
     private static long idCounter=0;
 
-    static {
+    /*static {
         todos.add(new Todo(++idCounter,"in28minutes","Learn to Dance",new Date(),false));
         todos.add(new Todo(++idCounter,"in28minutes","Learn about micro services",new Date(),false));
         todos.add(new Todo(++idCounter,"in28minutes","Learn about Angular",new Date(),false));
-    }
+    }*/
 
     public static List<Todo> findAll() {
         return todos;

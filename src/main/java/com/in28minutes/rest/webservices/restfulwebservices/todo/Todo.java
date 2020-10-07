@@ -13,21 +13,38 @@ public class Todo {
     private Long id;
 
     private String username;
-    private String description;
-    private Date targetDate;
+    private String name;
+    private String category;
+    private Date exp;
+    private Date mfd;
+    private int qty;
     private boolean isDone;
+    private String ppp;
 
     public Todo(){
 
     }
 
-    public Todo(Long id, String username, String description, Date targetDate, boolean isDone) {
-        this.id = id;
+    public Todo(String username, String name, String category, Date exp, Date mfd, int qty, boolean isDone, String ppp) {
         this.username = username;
-        this.description = description;
-        this.targetDate = targetDate;
+        this.name = name;
+        this.category = category;
+        this.exp = exp;
+        this.mfd = mfd;
+        this.qty = qty;
         this.isDone = isDone;
+        this.ppp = ppp;
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+
 
     public Long getId() {
         return id;
@@ -45,20 +62,36 @@ public class Todo {
         this.username = username;
     }
 
-    public String getDescription() {
-        return description;
+    public String getCategory() {
+        return category;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setCategory(String category) {
+        this.category = category;
     }
 
-    public Date getTargetDate() {
-        return targetDate;
+    public Date getExp() {
+        return exp;
     }
 
-    public void setTargetDate(Date targetDate) {
-        this.targetDate = targetDate;
+    public void setExp(Date exp) {
+        this.exp = exp;
+    }
+
+    public Date getMfd() {
+        return mfd;
+    }
+
+    public void setMfd(Date mfd) {
+        this.mfd = mfd;
+    }
+
+    public int getQty() {
+        return qty;
+    }
+
+    public void setQty(int qty) {
+        this.qty = qty;
     }
 
     public boolean isDone() {
@@ -67,6 +100,14 @@ public class Todo {
 
     public void setDone(boolean done) {
         isDone = done;
+    }
+
+    public String getPpp() {
+        return ppp;
+    }
+
+    public void setPpp(String ppp) {
+        this.ppp = ppp;
     }
 
     @Override
