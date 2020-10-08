@@ -1,12 +1,14 @@
 package com.in28minutes.rest.webservices.restfulwebservices.todo;
 
 import com.in28minutes.rest.webservices.restfulwebservices.Medicine.Medicine;
+import net.sf.jasperreports.engine.JRException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import java.io.FileNotFoundException;
 import java.net.URI;
 import java.util.List;
 
@@ -21,6 +23,10 @@ public class TodoJpaResource {
 
     @Autowired
     private TodoJpaRepo todoJpaRepo;
+
+    @Autowired
+    private ReportSetvice reportSetvice;
+
 
     @GetMapping("/jpa/users/{username}/todos")
     public List<Todo> getAllTodos(@PathVariable String username){
@@ -80,6 +86,11 @@ public class TodoJpaResource {
 
         return ResponseEntity.created(uri).build();
 
+    }
+
+    @GetMapping("report/{format}")
+    public String generateReport(@PathVariable String format) throws FileNotFoundException, JRException {
+        return reportSetvice.exportReport(format);
     }
 
 
