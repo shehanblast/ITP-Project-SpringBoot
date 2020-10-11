@@ -28,10 +28,10 @@ public class TodoJpaResource {
     private ReportSetvice reportSetvice;
 
 
-    @GetMapping("/jpa/users/{username}/todos")
-    public List<Todo> getAllTodos(@PathVariable String username){
+    @GetMapping("/jpa/users/todos")
+    public List<Todo> getAllTodos(){
        // return todoService.findAll();
-        return todoJpaRepo.findByUsername(username);
+        return todoJpaRepo.findAll();
     }
 
 
