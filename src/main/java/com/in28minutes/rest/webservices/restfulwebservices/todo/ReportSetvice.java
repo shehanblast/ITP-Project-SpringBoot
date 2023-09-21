@@ -28,10 +28,10 @@ public class ReportSetvice {
         parameters.put("Created by","java");
         JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport,parameters,dataSource);
 
-        if (reportFormat.equalsIgnoreCase("html")){
+        if ("html".equalsIgnoreCase(reportFormat)){
           JasperExportManager.exportReportToHtmlFile(jasperPrint,"C:\\Users\\shiha\\Desktop\\report"+"\\medicine.html");
         }
-        if (reportFormat.equalsIgnoreCase("pdf")){
+        if ("pdf".equalsIgnoreCase(reportFormat)){
             JasperExportManager.exportReportToPdfFile(jasperPrint,"C:\\Users\\shiha\\Desktop\\report"+"\\medicine.pdf");
         }
 
